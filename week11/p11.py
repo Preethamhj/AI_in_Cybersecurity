@@ -1,5 +1,5 @@
 # ============================================
-# WEEK 11: BRUTE FORCE DETECTION
+# WEEK 11: BRUTE FORCE DETECTION (FIXED)
 # ============================================
 
 import pandas as pd
@@ -18,25 +18,40 @@ def load_logs(filepath):
     with open(filepath, 'r') as f:
         for line in f:
 
-            # Extract IP, timestamp, status code
-            match = re.search(r'(\S+) - - \[(.*?)\] ".*?" (\d+)', line)
+            # Extract IP
+            ip_match = re.findall(r'\d+\.\d+\.\d+\.\d+', line)
 
-            if match:
-                ip = match.group(1)
-                timestamp = match.group(2)
-                status = int(match.group(3))
+            if not ip_match:
+                continue
 
-                # Success = 200, Fail = others
-                success = 1 if status == 200 else 0
+            ip = ip_match[0]
 
+            # Extract timestamp (simple format)
+            timestamp_match = re.search(r'^\w+\s+\d+\s+\d+:\d+:\d+', line)
+
+            timestamp = timestamp_match.group(0) if timestamp_match else None
+
+            # Case 1: Multiple failures in one line
+            multi_fail = re.search(r'(\d+) more authentication failures', line)
+
+            if multi_fail:
+                count = int(multi_fail.group(1))
+                success = 0
+
+                for _ in range(count):
+                    data.append([ip, timestamp, success])
+
+            # Case 2: Single failed password
+            elif "Failed password" in line:
+                success = 0
+                data.append([ip, timestamp, success])
+
+            # Case 3: Successful login
+            elif "Accepted" in line:
+                success = 1
                 data.append([ip, timestamp, success])
 
     df = pd.DataFrame(data, columns=['ip', 'timestamp', 'success'])
-
-    # Convert timestamp
-    df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
-
-    df = df.dropna()
 
     print("Logs Loaded:", df.shape)
 
@@ -54,8 +69,8 @@ def detect_bruteforce(df):
 
     attack_counts = failed.groupby('ip').size()
 
-    # Threshold (you can tune this)
-    threshold = 10
+    # Threshold
+    threshold = 5
 
     attackers = attack_counts[attack_counts > threshold]
 
@@ -69,23 +84,27 @@ def detect_bruteforce(df):
 # VISUALIZATION
 # ============================================
 
-def visualize(attackers):
+def visualize(attackers, top_n=10):
 
     if len(attackers) == 0:
         print("No brute force attacks detected.")
         return
 
-    plt.figure(figsize=(8,5))
+    # Take top N attackers
+    attackers = attackers.sort_values(ascending=False).head(top_n)
+
+    plt.figure(figsize=(10,5))
 
     attackers.plot(kind='bar')
 
-    plt.title("Brute Force Attack Attempts per IP")
+    plt.title(f"Top {top_n} Brute Force Attackers")
     plt.xlabel("IP Address")
     plt.ylabel("Failed Attempts")
 
-    plt.xticks(rotation=45)
-    plt.show()
+    plt.xticks(rotation=45, fontsize=8)  # cleaner labels
+    plt.tight_layout()
 
+    plt.show()
 
 # ============================================
 # MAIN
@@ -93,7 +112,7 @@ def visualize(attackers):
 
 if __name__ == "__main__":
 
-    df = load_logs("../datasets/auth.txt")
+    df = load_logs("../datasets/auth.log")
 
     attackers = detect_bruteforce(df)
 
