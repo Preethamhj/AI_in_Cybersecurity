@@ -1,0 +1,38 @@
+Program: p8.py
+Working directory: D:\Desktop\msc-lab\week8
+Exit code: 0
+========================================================================
+Dataset Loaded: (88647, 112)
+
+===== Logistic Regression =====
+Accuracy: 0.9328821206993796
+
+Report:
+               precision    recall  f1-score   support
+
+           0       0.95      0.94      0.95     11612
+           1       0.89      0.91      0.90      6118
+
+    accuracy                           0.93     17730
+   macro avg       0.92      0.93      0.93     17730
+weighted avg       0.93      0.93      0.93     17730
+
+[saved image] result_image_01.png
+
+===== Random Forest =====
+Accuracy: 0.9697687535250987
+
+Report:
+               precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98     11612
+           1       0.95      0.96      0.96      6118
+
+    accuracy                           0.97     17730
+   macro avg       0.97      0.97      0.97     17730
+weighted avg       0.97      0.97      0.97     17730
+
+[saved image] result_image_02.png
+[saved image] result_image_03.png
+
+✅ Week 8 Completed Successfully!

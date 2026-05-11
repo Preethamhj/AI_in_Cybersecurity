@@ -1,0 +1,11 @@
+Program: p12.py
+Working directory: D:\Desktop\msc-lab\week12
+Exit code: 0
+========================================================================
+Dataset Loaded: (125973, 43)
+
+Supervised Accuracy: 0.9978567176026989
+Unsupervised Approx Accuracy: 0.565985314546537
+Hybrid Accuracy: 0.9645961500297678
+
+✅ Week 12 Completed Successfully!

@@ -1,0 +1,16 @@
+Program: p10.py
+Working directory: D:\Desktop\msc-lab\week10
+Exit code: 0
+========================================================================
+Dataset Loaded: (254245, 15)
+
+Columns:
+ Index(['StartTime', 'Dur', 'Proto', 'SrcAddr', 'Sport', 'Dir', 'DstAddr',
+       'Dport', 'State', 'sTos', 'dTos', 'TotPkts', 'TotBytes', 'SrcBytes',
+       'Label'],
+      dtype='str')
+
+Clustering Done!
+[saved image] result_image_01.png
+
+✅ Week 10 Completed Successfully!

@@ -1,0 +1,38 @@
+Program: p6.py
+Working directory: D:\Desktop\msc-lab\week6
+Exit code: 0
+========================================================================
+Dataset Loaded: (125973, 43)
+
+===== Random Forest =====
+Accuracy: 0.9989283588013494
+
+Report:
+               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     13422
+           1       1.00      1.00      1.00     11773
+
+    accuracy                           1.00     25195
+   macro avg       1.00      1.00      1.00     25195
+weighted avg       1.00      1.00      1.00     25195
+
+[saved image] result_image_01.png
+
+===== SVM =====
+Accuracy: 0.9903155387973804
+
+Report:
+               precision    recall  f1-score   support
+
+           0       0.99      0.99      0.99     13422
+           1       0.99      0.99      0.99     11773
+
+    accuracy                           0.99     25195
+   macro avg       0.99      0.99      0.99     25195
+weighted avg       0.99      0.99      0.99     25195
+
+[saved image] result_image_02.png
+[saved image] result_image_03.png
+
+✅ Week 6 Completed Successfully!

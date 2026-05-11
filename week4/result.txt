@@ -1,0 +1,13 @@
+Program: p4.py
+Working directory: D:\Desktop\msc-lab\week4
+Exit code: 0
+========================================================================
+Dataset Loaded: (125973, 43)
+
+Accuracy: 0.9980154792617583
+Precision: 0.9982150446238844
+Recall: 0.9975367366006965
+F1 Score: 0.9978757753420001
+[saved image] result_image_01.png
+
+✅ Week 4 Completed Successfully!

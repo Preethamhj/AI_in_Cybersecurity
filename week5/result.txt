@@ -1,0 +1,19 @@
+Program: p5.py
+Working directory: D:\Desktop\msc-lab\week5
+Exit code: 0
+========================================================================
+Dataset Loaded: (125973, 43)
+D:\Desktop\msc-lab\cyber_env\Lib\site-packages\joblib\externals\loky\backend\context.py:131: UserWarning: Could not find the number of physical cores for the following reason:
+found 0 physical cores < 1
+Returning the number of logical cores instead. You can silence this warning by setting LOKY_MAX_CPU_COUNT to the number of cores you want to use.
+  warnings.warn(
+  File "D:\Desktop\msc-lab\cyber_env\Lib\site-packages\joblib\externals\loky\backend\context.py", line 255, in _count_physical_cores
+    raise ValueError(f"found {cpu_count_physical} physical cores < 1")
+
+K-Means Clustering Done!
+[saved image] result_image_01.png
+
+DBSCAN Clustering Done!
+[saved image] result_image_02.png
+
+✅ Week 5 Completed Successfully!

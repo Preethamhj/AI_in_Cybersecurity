@@ -1,0 +1,9 @@
+Program: p13.py
+Working directory: D:\Desktop\msc-lab\week13
+Exit code: 0
+========================================================================
+Dataset Loaded: (125973, 43)
+[saved image] result_image_01.png
+[saved image] result_image_02.png
+
+✅ Week 13 Completed Successfully!

@@ -1,0 +1,23 @@
+Program: p11.py
+Working directory: D:\Desktop\msc-lab\week11
+Exit code: 0
+========================================================================
+Logs Loaded: (1624, 3)
+
+⚠️ Suspicious IPs (Brute Force):
+ip
+1.189.205.173      7
+1.30.211.144      11
+103.230.120.26    11
+105.101.221.33    11
+106.57.58.19       7
+                  ..
+85.245.107.41     11
+91.243.236.123     7
+93.120.176.237    11
+94.154.25.149      7
+95.190.198.34      7
+Length: 102, dtype: int64
+[saved image] result_image_01.png
+
+✅ Week 11 Completed Successfully!

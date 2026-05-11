@@ -1,0 +1,9 @@
+Program: p7.py
+Working directory: D:\Desktop\msc-lab\week7
+Exit code: 0
+========================================================================
+Dataset Loaded: (125973, 43)
+Explained Variance: [0.19517453 0.13038314]
+[saved image] result_image_01.png
+
+✅ Week 7 Completed Successfully!
